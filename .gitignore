@@ -20,3 +20,6 @@ cypress/reports
 # owasp report
 owasp/dependency-check/data
 owasp/dependency-check/report
+
+
+src/server/firebase-auth.json
