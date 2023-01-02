@@ -1,0 +1,22 @@
+dist
+distServer
+dist-storybook
+build
+node_modules
+vcs.xml
+report
+.idea
+.vscode
+npm-debug.log
+.eslintcache
+.env
+.env.*
+.DS_Store
+.yalc
+yalc.lock
+yarn-error.log
+cypress/reports
+
+# owasp report
+owasp/dependency-check/data
+owasp/dependency-check/report

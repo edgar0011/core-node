@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext",
+      "es6"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": false,
+    "noEmit": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "jsx": "preserve",
+    "baseUrl": "./src",
+    "rootDir": ".",
+    "allowSyntheticDefaultImports": true,
+    "noFallthroughCasesInSwitch": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "declarationDir": "./dist/types",
+    "outDir": "./dist/lib",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "incremental": true,
+    "paths": {
+      "utils": ["/utils/*"],
+      "api": ["/api/*"],
+      "server": ["/server/*"],
+    },
+  },
+  "exclude": [
+    "node_modules", "dist", "distServer", "./src/server/api/inospin/inospin-api.spec.ts"
+  ],
+  "typeRoots": ["./node_modules/@types", "./types"],
+  "include": [
+    "./src/**/*",
+    "./types/**/*",
+  ],
+}
