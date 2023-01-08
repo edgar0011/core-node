@@ -12,6 +12,9 @@
     "dev:tsc": "yarn dev & yarn tsc --watch --noEmit",
     "dev:be": "NODE_ENV=development nodemon --watch './src/server/**/*' --ext 'ts,js' --exec ts-node -r ./node_modules/tsconfig-paths/register -- $NODE_DEBUG_OPTION --files ./src/server/index.ts",
     "dev:be:tsc": "yarn dev:be & yarn tsc --watch --noEmit",
+    "build:be": "BABEL_ENV=production NODE_ENV=production webpack --config webpack-server.config.babel.js --mode=production",
+    "build:be:analyze": "ANALYZE=true yarn build:be",
+    "start": "NODE_ENV=production node distServer/index.js",
     "lint": "eslint src --ext js,jsx,ts,tsx",
     "lint:quiet": "eslint src --ext js,jsx,ts,tsx --quiet",
     "lint:quiet:watch": "nodemon --watch './src/**/*' --exec yarn lint:ts:quiet",
@@ -44,11 +47,17 @@
   },
   "devDependencies": {
     "@babel/eslint-plugin": "^7.19.1",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-typescript": "^7.18.6",
+    "@babel/register": "^7.18.9",
     "@earlorg/eslint-config": "^1.5.24",
     "@sentry/node": "^7.28.1",
     "@types/body-parser": "^1.19.2",
     "@typescript-eslint/eslint-plugin": "^5.30.0",
     "@typescript-eslint/parser": "^5.30.0",
+    "babel-loader": "^9.1.2",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "core-js": "^3.27.1",
     "eslint-import-resolver-typescript": "^3.5.2",
     "husky": "^8.0.2",
     "jest": "^29.3.1",
@@ -57,6 +66,10 @@
     "prettier-eslint-cli": "^7.1.0",
     "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1",
-    "typescript": "^4.9.3"
+    "typescript": "^4.9.3",
+    "webpack": "^5.75.0",
+    "webpack-bundle-analyzer": "^4.7.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-node-externals": "^3.0.0"
   }
 }

@@ -25,23 +25,29 @@ router.post('/sign-out', auth, async (req, res) => {
 })
 
 router.get('/', auth, (req, res) => {
-  res.status(200).json({
+  if (res.headersSent) {
+    return null
+  }
+  return res.status(200).json({
     result: {
       message: 'Hi there...GET',
-      params: req.params,
-      body: req.body,
-      query: req.query,
+      token: req.token,
+      user: req.user,
+      uid: req.uid,
     },
   })
 })
 
 router.post('/', auth, async (req, res) => {
-  res.status(201).json({
+  if (res.headersSent) {
+    return null
+  }
+  return res.status(201).json({
     result: {
       message: 'Hi there...POST',
-      params: req.params,
-      body: req.body,
-      query: req.query,
+      token: req.token,
+      user: req.user,
+      uid: req.uid,
     },
   })
 })

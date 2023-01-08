@@ -40,7 +40,7 @@ export const errorHandler = (
   if (res.headersSent) {
     return next && next(translatedError)
   }
-  // res.render('error', { error: err })
+
   return res.status(status || 500).json(
     payload
     || (typeof translatedError === 'string'
