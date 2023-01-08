@@ -24,7 +24,7 @@ const basePath = isProd ? '..' : '../..'
 
 // APP
 
-const PORT = process.env.PORT || 8080
+const PORT = process.env.$PORT || process.env.PORT || 8080
 const app: Express = express()
 
 Sentry.init({ dsn: `https://${configEnv?.SENTRY_DSN}` })
@@ -120,7 +120,7 @@ app.use(errorHandler)
 
 
 const server: Server = app.listen(PORT, () => {
-  console.log('Inospiner express app running at 8080')
+  console.log('core-node express app running at 8080')
   Sentry.captureMessage(
     // eslint-disable-next-line require-atomic-updates, @typescript-eslint/ban-ts-comment
     // @ts-ignore

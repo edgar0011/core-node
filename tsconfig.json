@@ -41,7 +41,7 @@
     },
   },
   "exclude": [
-    "node_modules", "dist", "distServer", "./src/server/api/inospin/inospin-api.spec.ts"
+    "node_modules", "dist", "distServer",
   ],
   "typeRoots": ["./node_modules/@types", "./types"],
   "include": [
